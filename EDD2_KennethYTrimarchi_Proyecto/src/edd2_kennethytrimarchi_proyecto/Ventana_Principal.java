@@ -1,4 +1,5 @@
 package edd2_kennethytrimarchi_proyecto;
+import static edd2_kennethytrimarchi_proyecto.GUI.exportXML;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
@@ -2329,55 +2330,42 @@ public class Ventana_Principal extends javax.swing.JFrame {
 
     private void jb_CrearArchivoXMLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_CrearArchivoXMLMouseClicked
         try {
-            if(jt_NombreXML.getText() != null){
+            if (jt_NombreXML.getText().isEmpty() || file == null || metadata == null || metadata.getCampos() == null || metadata.getNumregistros() == 0) {
+                JOptionPane.showMessageDialog(null, "No hay informacion cargada");
+            } else {
                 String name = jt_NombreXML.getText();
-                
-                if (currentFile == null || currentFile.getCampos().isEmpty() || currentFile.getNumregistros() == 0) {
-                    JOptionPane.showMessageDialog(null, "No hay informacion cargada");
-                } else {
-                    ArrayList registrost = new ArrayList();//van los registros
-                    /* FALTA AGREGAR LA TABLA CON LA QUE TRABAJAREMOS
-                    for (int i = 0; i < Table.getRowCount(); i++) {
-                        ArrayList row = new ArrayList();
-                        for (int j = 0; j < Table.getColumnCount(); j++) {
-                            row.add(Table.getValueAt(i, j));
-                        }
-                        registrost.add(row);
+                ArrayList registrost = new ArrayList();
+
+                for (int i = 0; i < Table.getRowCount(); i++) {
+                    ArrayList row = new ArrayList();
+                    for (int j = 0; j < Table.getColumnCount(); j++) {
+                        row.add(Table.getValueAt(i, j));
                     }
-                    */
-                    exportXML(currentFile.getCampos(), registrost, name);
-                    System.out.println("SE EXPORTO CON EXITO");//tirarlo con un joptionpane?
-                    jt_NombreXML.setText("");
-                    
-                    jd_NameParaXML.dispose();
-                    
+                    registrost.add(row);
                 }
-            }else{
-                System.out.println("No ingreso nombre para exportar el archivo XML intente de nuevo");
-            } 
-           
+                exportXML(metadata.getCampos(), registrost, name);
+            }
 
         } catch (Exception e) {
             System.out.println("Could not export successfully");
         }
+
     }//GEN-LAST:event_jb_CrearArchivoXMLMouseClicked
 
     private void jb_ExportarExcelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ExportarExcelMouseClicked
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel)jt_Registros.getModel();
-        Tabla.setModel(model);
         try {
-            if (currentFile == null || currentFile.getCampos() == null || currentFile.getNumregistros() == 0) {
+            if (file == null || metadata == null || metadata.getCampos() == null || metadata.getNumregistros() == 0) {
                 JOptionPane.showMessageDialog(null, "No hay informacion cargada");
             } else {
                 String name = JOptionPane.showInputDialog(null, "Ingrese el nombre del exporte: ");
-                //mandar tabla de registros
-                excel.ExportToExcel(currentFile, name, Tabla);
+                metodos.ExportToExcel(metadata, name, Table);
             }
 
         } catch (Exception e) {
             System.out.println("Error Fatal.");
         }
+
         
     }//GEN-LAST:event_jb_ExportarExcelMouseClicked
 
