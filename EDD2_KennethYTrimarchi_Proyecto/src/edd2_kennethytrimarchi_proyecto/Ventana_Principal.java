@@ -2213,7 +2213,59 @@ public class Ventana_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jb_IntroducirRegistrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_IntroducirRegistrosMouseClicked
-        
+        System.out.println("NUM REGISTROS: " + metadata.getNumregistros());
+        if (metadata != null) {
+            if (metadata.getCampos() != null) {
+                if (metadata.getCampos().size() > 0) {
+                    if (file == null) {
+                        while (FileSuccess == 0) {
+                            CreateFile();
+
+                        }
+
+                        try {
+                            EscribirMetadatos();
+                        } catch (IOException ex) {
+                            // ex.printStackTrace();
+                            System.out.println("Otro de los mil errores escribiendo metadatas.");
+                        }
+                        //metadata.addnumregistros();
+                        CrearRegistro();
+                    } else {
+                        if (metadata.getNumregistros() < 1) {
+                            try {
+                                file.delete();
+                                file.createNewFile();
+                                System.out.println("Forcing deletion and recreation of the file.");
+                            } catch (Exception sdj) {
+                                System.out.println("Error en borrar.");
+                            }
+
+                            try {
+                                EscribirMetadatos();
+                            } catch (IOException ex) {
+                                //ex.printStackTrace();
+                            }
+                            metadata.addnumregistros();
+                            CrearRegistro();
+                        } else {
+                            metadata.addnumregistros();
+                            CrearRegistro();
+                        }
+
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "No hay campos creados! XTT 428");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "No hay campos creados! XTT 431");
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "No hay campos creados! XTT 435");
+        }
+    }
       /*  if (currentFile != null) {
             if (currentFile.getCampos().size() > 0) {
                 CrearRegistro();
@@ -2222,7 +2274,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
             JOptionPane.showInputDialog("No hay Campos creados");
         }*/
         //System.out.println("NUM REGISTROS: " + currentFile.getNumregistros());
-            if (currentFile.getCampos() != null) {
+            /*if (currentFile.getCampos() != null) {
                 if (currentFile.getCampos().size() > 0) {
                     
                         if (currentFile.getNumregistros() < 1) {
@@ -2258,7 +2310,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "No hay campos creados! XTT 431");
-            }
+            }*/
             
         
         
