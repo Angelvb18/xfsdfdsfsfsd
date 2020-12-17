@@ -766,7 +766,6 @@ public class GUI extends javax.swing.JFrame {
                 mode = -1;
                 tablemodification = 1;
                 System.out.println("Cell value being edited.");
-
                 CellEditor x = Table.getCellEditor();
                 oldcellvalue = Table.getValueAt(Table.getSelectedRow(), Table.getSelectedColumn());
                 currentRow = Table.getSelectedRow();
