@@ -93,6 +93,18 @@ public class GUI extends javax.swing.JFrame {
 
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jd_CrearRegistro = new javax.swing.JDialog();
+        jd_BuscarRegistro = new javax.swing.JDialog();
+        jLabel7 = new javax.swing.JLabel();
+        js_key = new javax.swing.JSpinner();
+        jLabel8 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jb_regresarBuscarregistro = new javax.swing.JButton();
+        jd_MostrarRegistro = new javax.swing.JDialog();
+        jLabel9 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ta_infoRegistro = new javax.swing.JTextArea();
+        jb_regresarInfoRegistro = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -128,6 +140,121 @@ public class GUI extends javax.swing.JFrame {
         jMenuItem2.setText("jMenuItem2");
 
         jMenu3.setText("jMenu3");
+
+        javax.swing.GroupLayout jd_CrearRegistroLayout = new javax.swing.GroupLayout(jd_CrearRegistro.getContentPane());
+        jd_CrearRegistro.getContentPane().setLayout(jd_CrearRegistroLayout);
+        jd_CrearRegistroLayout.setHorizontalGroup(
+            jd_CrearRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 565, Short.MAX_VALUE)
+        );
+        jd_CrearRegistroLayout.setVerticalGroup(
+            jd_CrearRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 262, Short.MAX_VALUE)
+        );
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setText("Buscar Registro");
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setText("Ingrese la Llave para buscar");
+
+        jButton2.setText("Buscar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        jb_regresarBuscarregistro.setText("Regresar");
+        jb_regresarBuscarregistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_regresarBuscarregistroMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_BuscarRegistroLayout = new javax.swing.GroupLayout(jd_BuscarRegistro.getContentPane());
+        jd_BuscarRegistro.getContentPane().setLayout(jd_BuscarRegistroLayout);
+        jd_BuscarRegistroLayout.setHorizontalGroup(
+            jd_BuscarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_BuscarRegistroLayout.createSequentialGroup()
+                .addGroup(jd_BuscarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_BuscarRegistroLayout.createSequentialGroup()
+                        .addGap(201, 201, 201)
+                        .addComponent(jLabel7))
+                    .addGroup(jd_BuscarRegistroLayout.createSequentialGroup()
+                        .addGap(217, 217, 217)
+                        .addComponent(js_key, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_BuscarRegistroLayout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(jLabel8)))
+                .addContainerGap(200, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_BuscarRegistroLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jb_regresarBuscarregistro)
+                .addGap(17, 17, 17))
+        );
+        jd_BuscarRegistroLayout.setVerticalGroup(
+            jd_BuscarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_BuscarRegistroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addGap(59, 59, 59)
+                .addComponent(jLabel8)
+                .addGap(18, 18, 18)
+                .addComponent(js_key, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(jd_BuscarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jb_regresarBuscarregistro))
+                .addContainerGap())
+        );
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setText("Información del Registro");
+
+        ta_infoRegistro.setEditable(false);
+        ta_infoRegistro.setColumns(20);
+        ta_infoRegistro.setRows(5);
+        jScrollPane2.setViewportView(ta_infoRegistro);
+
+        jb_regresarInfoRegistro.setText("Regresar");
+        jb_regresarInfoRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_regresarInfoRegistroMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_MostrarRegistroLayout = new javax.swing.GroupLayout(jd_MostrarRegistro.getContentPane());
+        jd_MostrarRegistro.getContentPane().setLayout(jd_MostrarRegistroLayout);
+        jd_MostrarRegistroLayout.setHorizontalGroup(
+            jd_MostrarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_MostrarRegistroLayout.createSequentialGroup()
+                .addGroup(jd_MostrarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_MostrarRegistroLayout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(jLabel9))
+                    .addGroup(jd_MostrarRegistroLayout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(103, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_MostrarRegistroLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jb_regresarInfoRegistro)
+                .addGap(26, 26, 26))
+        );
+        jd_MostrarRegistroLayout.setVerticalGroup(
+            jd_MostrarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_MostrarRegistroLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel9)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addComponent(jb_regresarInfoRegistro)
+                .addContainerGap())
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -685,6 +812,8 @@ public class GUI extends javax.swing.JFrame {
             while (exito == false) {
                 try {
                     String temp = JOptionPane.showInputDialog(null, "Ingrese: " + metadata.getCampos().get(i).toString() + " Tipo: " + metadata.getTipos().get(i).toString());
+                    //this.setVisible(false);
+                    
                     if (Integer.parseInt(metadata.getTipos().get(i).toString()) == 1) {
                         insertarray[i] = Integer.parseInt(temp);
                     } else if (Integer.parseInt(metadata.getTipos().get(i).toString()) == 2) {
@@ -988,7 +1117,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
         // TODO add your handling code here:
-        try {
+        /*try {
             int Primarykey = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el PrimaryKey del registro a buscar."));
             Registro temporal = new Registro(Primarykey);
             Bnode x;
@@ -1009,7 +1138,14 @@ public class GUI extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Operation aborted.");
             //e.printStackTrace();
-        }
+        }*/
+        
+        this.setVisible(false);
+        jd_BuscarRegistro.pack();
+        jd_BuscarRegistro.setModal(true);
+        jd_BuscarRegistro.setLocationRelativeTo(this);
+        jd_BuscarRegistro.setVisible(true);
+        
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
@@ -1237,6 +1373,49 @@ public class GUI extends javax.swing.JFrame {
            
        }
     }//GEN-LAST:event_jMenu4MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        int key = (int) js_key.getValue();
+        try {
+            
+            Registro temporal = new Registro(key);
+            Bnode x;
+            //System.out.println("------------");
+            if ((x = metadata.getArbolB().search(temporal)) == null) {
+                JOptionPane.showMessageDialog(jd_BuscarRegistro, "No Se Pudo Encontrar el Registro");
+                // System.out.println("------------");
+            } else {
+
+                Data datos = BuscarDatoArchivo(temporal);
+                String info = "";
+                for (int i = 0; i < datos.datos.size(); i++) {
+                    info += datos.datos.get(i) + "-";
+                }
+                
+                ta_infoRegistro.setText(info);
+                jd_BuscarRegistro.setVisible(false);
+                jd_MostrarRegistro.pack();
+                jd_MostrarRegistro.setModal(true);
+                jd_MostrarRegistro.setLocationRelativeTo(this);
+                jd_MostrarRegistro.setVisible(true);
+
+            }
+        } catch (Exception e) {
+            //JOptionPane.showMessageDialog(null, "Operation aborted.");
+            //e.printStackTrace();
+        }
+        
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jb_regresarBuscarregistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_regresarBuscarregistroMouseClicked
+        jd_BuscarRegistro.dispose();
+        this.setVisible(true);
+    }//GEN-LAST:event_jb_regresarBuscarregistroMouseClicked
+
+    private void jb_regresarInfoRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_regresarInfoRegistroMouseClicked
+        jd_MostrarRegistro.dispose();
+        jd_BuscarRegistro.setVisible(true);
+    }//GEN-LAST:event_jb_regresarInfoRegistroMouseClicked
     public static void exportXML(ArrayList Campos, ArrayList Regs, String Direccion) {
         Document document = null;
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -1787,12 +1966,16 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Table;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -1818,5 +2001,13 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton jb_regresarBuscarregistro;
+    private javax.swing.JButton jb_regresarInfoRegistro;
+    private javax.swing.JDialog jd_BuscarRegistro;
+    private javax.swing.JDialog jd_CrearRegistro;
+    private javax.swing.JDialog jd_MostrarRegistro;
+    private javax.swing.JSpinner js_key;
+    private javax.swing.JTextArea ta_infoRegistro;
     // End of variables declaration//GEN-END:variables
 }
