@@ -2072,17 +2072,11 @@ public class Ventana_Principal extends javax.swing.JFrame {
     private void bt_NuevoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_NuevoMouseClicked
         // TODO add your handling code here:
         NewFile();
-        
-        jd_nombre.pack();
-        jd_nombre.setModal(true);
-        jd_nombre.setLocationRelativeTo(this);
-        jd_nombre.setVisible(true);
     }//GEN-LAST:event_bt_NuevoMouseClicked
 
     private void bt_SalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_SalvarMouseClicked
         // TODO add your handling code here:
-        currentFile.setCampos(campos);
-        
+        SaveFile();
         JOptionPane.showMessageDialog(this, "El archivo se guardo exitosamente!");
     }//GEN-LAST:event_bt_SalvarMouseClicked
 
@@ -2122,30 +2116,23 @@ public class Ventana_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void bt_CargarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_CargarMouseClicked
+        // TODO add your handling code here:
         LoadFile();
-        
-        if(FileSuccess == 1)
-        {
-            currentFile = new Metadata();
-            BuildTable(1);
+        if (FileSuccess == 1) {
+            metadata = new Metadata();
+            BuildTable(metadata, 1);
             try {
                 CargarMetadatos();
-               BuildTable(0);
+                BuildTable(metadata, 0);
                 LeerDatosRegistro();
             } catch (ClassNotFoundException ex) {
                 // Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
             }
-            campos = currentFile.getCampos();
-            bt_Cerrar.setEnabled(true);
-            bt_Salvar.setEnabled(true);
-            bt_Nuevo.setEnabled(false);
-            bt_Cargar.setEnabled(false);
-            jb_Campos.setEnabled(true);
-            jb_Registros.setEnabled(true);
-            jb_Indices.setEnabled(true);
-            jb_Estandarizacion.setEnabled(true);
+            System.out.println(metadata.getCampos().get(0));
+
+        } else {
+
         }
-        
     }//GEN-LAST:event_bt_CargarMouseClicked
 
     private void jb_RegresarDeDatosCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_RegresarDeDatosCampoMouseClicked
