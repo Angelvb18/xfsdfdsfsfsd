@@ -734,7 +734,12 @@ public class GUI extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem12);
 
-        jMenuItem13.setText("BTree");
+        jMenuItem13.setText("Cruzar Archivo");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem13);
 
         jMenuBar1.add(jMenu4);
@@ -742,9 +747,19 @@ public class GUI extends javax.swing.JFrame {
         jMenu5.setText("Exportar");
 
         jMenuItem14.setText("Exportar a Excel");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem14);
 
         jMenuItem15.setText("Exportar a XML");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem15);
 
         jMenuBar1.add(jMenu5);
@@ -1607,6 +1622,147 @@ public class GUI extends javax.swing.JFrame {
             jScrollPane1.updateUI();
         }
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        // TODO add your handling code here:
+        try {
+            if (file == null || metadata == null || metadata.getCampos() == null || metadata.getNumregistros() == 0) {
+                JOptionPane.showMessageDialog(null, "No hay informacion cargada");
+            } else {
+                String name = JOptionPane.showInputDialog(null, "Ingrese el nombre del exporte: ");
+                metodos.ExportToExcel(metadata, name, Table);
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error Fatal.");
+        }
+
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        // TODO add your handling code here:
+        try {
+            if (file == null || metadata == null || metadata.getCampos() == null || metadata.getNumregistros() == 0) {
+                JOptionPane.showMessageDialog(null, "No hay informacion cargada");
+            } else {
+                String name = JOptionPane.showInputDialog(null, "Ingrese el nombre del exporte: ");
+                ArrayList registrost = new ArrayList();
+
+                for (int i = 0; i < Table.getRowCount(); i++) {
+                    ArrayList row = new ArrayList();
+                    for (int j = 0; j < Table.getColumnCount(); j++) {
+                        row.add(Table.getValueAt(i, j));
+                    }
+                    registrost.add(row);
+                }
+                exportXML(metadata.getCampos(), registrost, name);
+            }
+
+        } catch (Exception e) {
+            System.out.println("Could not export successfully");
+        }
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        // TODO add your handling code here:
+        
+        // TODO add your handling code here:
+        if (file == null || metadata == null) {
+            JOptionPane.showMessageDialog(null, "No hay ningun file cargado");
+        } else {
+            if (metadata.getCampos() == null) {
+                JOptionPane.showMessageDialog(null, "No hay informacion definida.");
+            } else {
+                JTable tablavieja = (JTable) Table;
+                Metadata vieja = (Metadata) metadata;
+
+                AvailList = new DLL();
+                RAfile = null;
+                //Metadata temporal = new Metadata();
+                //temporal = metadata;
+                LoadFile();
+                if (FileSuccess == 1) {
+
+                    metadata = new Metadata();
+                    BuildTable(metadata, 1);
+                    try {
+                        CargarMetadatos();
+                        BuildTable(metadata, 0);
+                        LeerDatosRegistro();
+                    } catch (ClassNotFoundException ex) {
+                        Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
+                    // Comparar ahora los campos de ambas metadatas.
+                    if (metadata.getCampos().size() == vieja.getCampos().size()) {
+                        boolean compatible = true;
+                        int camposmax = metadata.getCampos().size();
+                        for (int i = 0; i < camposmax; i++) {
+                            int value1 = Integer.parseInt(metadata.getTipos().get(i).toString());
+                            int value2 = Integer.parseInt(vieja.getTipos().get(i).toString());
+                            if (value1 == value2) {
+
+                            } else {
+                                System.out.println("Valor Incompatible i:" + value1 + "Valor Incompatible2:" + value2);
+                                compatible = false;
+                            }
+
+                        }
+                        if (compatible) {
+                            System.out.println(metadata);
+                            System.out.println(vieja);
+                            TableModel modelviejo = tablavieja.getModel();
+                            DefaultTableModel modeloviejo = (DefaultTableModel) modelviejo;
+                            TableModel model = Table.getModel();
+                            DefaultTableModel modelo = (DefaultTableModel) model;
+                            for (int i = 0; i < tablavieja.getRowCount(); i++) {
+                                int numactualr = Integer.parseInt(modeloviejo.getValueAt(i, 0).toString());
+                                int superes = Integer.parseInt(Table.getValueAt(i, 0).toString());
+                                System.out.println("nUM ACTUAk" + numactualr + "Ps" + superes);
+                                Registro trabajando = new Registro(numactualr);
+                                if (metadata.getArbolB().search(trabajando) == null) {
+                                    if (numactualr > 9999 && numactualr < 100000) {
+                                        metadata.getArbolB().insert(trabajando);
+                                        ArrayList superrow = new ArrayList();
+                                        for (int j = 0; j < vieja.getCampos().size(); j++) {
+                                            superrow.add(tablavieja.getValueAt(i, j));
+                                        }
+
+                                        modelo.addRow(superrow.toArray());
+                                        System.out.println(trabajando);
+                                        metadata.addnumregistros();
+                                        try {
+                                            EscribirDatosRegistro(superrow);//Send Array to Trima
+                                            BuscarDatoArchivo(trabajando);
+                                        } catch (Exception ex) {
+                                            //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+                                            System.out.println(ex);
+                                            ex.printStackTrace();
+                                        }
+                                        Table.setModel(modelo);
+                                        System.out.println(metadata.getArbolB().search(trabajando));
+                                    } else {
+                                        JOptionPane.showMessageDialog(null, "Dato Incompatible pertenece a primary key " + numactualr);
+
+                                    }
+                                } else {
+                                    JOptionPane.showMessageDialog(null, "Dato Ya existe!");
+                                    // System.out.println(metadata.getArbolB().search(trabajando));
+                                }
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Metadatas no compatibles por tipo");
+
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Metadatas no compatibles por tamaño de campos");
+                        JOptionPane.showMessageDialog(null, "Se cargara el segundo archivo seleccionado.");
+                    }
+                }
+            }
+        }
+        
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
     public static void exportXML(ArrayList Campos, ArrayList Regs, String Direccion) {
         Document document = null;
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
