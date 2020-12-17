@@ -93,7 +93,11 @@ public class GUI extends javax.swing.JFrame {
 
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jd_CrearRegistro = new javax.swing.JDialog();
+        jd_CrearRegistroString = new javax.swing.JDialog();
+        jLabel11 = new javax.swing.JLabel();
+        jl_nombreCampo = new javax.swing.JLabel();
+        jt_RegistroString = new javax.swing.JTextField();
+        jb_RegresarRegistroString = new javax.swing.JButton();
         jd_BuscarRegistro = new javax.swing.JDialog();
         jLabel7 = new javax.swing.JLabel();
         js_key = new javax.swing.JSpinner();
@@ -118,6 +122,11 @@ public class GUI extends javax.swing.JFrame {
         rb_tip_long = new javax.swing.JRadioButton();
         rb_tip_char = new javax.swing.JRadioButton();
         bt_Tipo = new javax.swing.ButtonGroup();
+        jd_CrearRegistroInt = new javax.swing.JDialog();
+        jLabel12 = new javax.swing.JLabel();
+        jl_NombreCampoInt = new javax.swing.JLabel();
+        jf_Integer = new javax.swing.JSpinner();
+        jb_AceptarRegistroString = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -157,15 +166,51 @@ public class GUI extends javax.swing.JFrame {
 
         jMenu3.setText("jMenu3");
 
-        javax.swing.GroupLayout jd_CrearRegistroLayout = new javax.swing.GroupLayout(jd_CrearRegistro.getContentPane());
-        jd_CrearRegistro.getContentPane().setLayout(jd_CrearRegistroLayout);
-        jd_CrearRegistroLayout.setHorizontalGroup(
-            jd_CrearRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setText("Crear Registro");
+
+        jl_nombreCampo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jl_nombreCampo.setText("jLabel12");
+
+        jb_RegresarRegistroString.setText("Aceptar");
+        jb_RegresarRegistroString.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_RegresarRegistroStringMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_CrearRegistroStringLayout = new javax.swing.GroupLayout(jd_CrearRegistroString.getContentPane());
+        jd_CrearRegistroString.getContentPane().setLayout(jd_CrearRegistroStringLayout);
+        jd_CrearRegistroStringLayout.setHorizontalGroup(
+            jd_CrearRegistroStringLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_CrearRegistroStringLayout.createSequentialGroup()
+                .addGroup(jd_CrearRegistroStringLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_CrearRegistroStringLayout.createSequentialGroup()
+                        .addGap(233, 233, 233)
+                        .addComponent(jLabel11))
+                    .addGroup(jd_CrearRegistroStringLayout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(jl_nombreCampo)
+                        .addGap(30, 30, 30)
+                        .addComponent(jt_RegistroString, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(219, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_CrearRegistroStringLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jb_RegresarRegistroString)
+                .addGap(71, 71, 71))
         );
-        jd_CrearRegistroLayout.setVerticalGroup(
-            jd_CrearRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 262, Short.MAX_VALUE)
+        jd_CrearRegistroStringLayout.setVerticalGroup(
+            jd_CrearRegistroStringLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_CrearRegistroStringLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel11)
+                .addGap(79, 79, 79)
+                .addGroup(jd_CrearRegistroStringLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_nombreCampo)
+                    .addComponent(jt_RegistroString, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addComponent(jb_RegresarRegistroString)
+                .addGap(35, 35, 35))
         );
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -382,6 +427,51 @@ public class GUI extends javax.swing.JFrame {
         jd_CrearCampoLayout.setVerticalGroup(
             jd_CrearCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setText("Crear Registro");
+
+        jl_NombreCampoInt.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jl_NombreCampoInt.setText("jLabel13");
+
+        jb_AceptarRegistroString.setText("Aceptar");
+        jb_AceptarRegistroString.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_AceptarRegistroStringMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_CrearRegistroIntLayout = new javax.swing.GroupLayout(jd_CrearRegistroInt.getContentPane());
+        jd_CrearRegistroInt.getContentPane().setLayout(jd_CrearRegistroIntLayout);
+        jd_CrearRegistroIntLayout.setHorizontalGroup(
+            jd_CrearRegistroIntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_CrearRegistroIntLayout.createSequentialGroup()
+                .addGap(181, 181, 181)
+                .addGroup(jd_CrearRegistroIntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel12)
+                    .addGroup(jd_CrearRegistroIntLayout.createSequentialGroup()
+                        .addComponent(jl_NombreCampoInt)
+                        .addGap(18, 18, 18)
+                        .addComponent(jf_Integer, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(249, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_CrearRegistroIntLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jb_AceptarRegistroString)
+                .addGap(66, 66, 66))
+        );
+        jd_CrearRegistroIntLayout.setVerticalGroup(
+            jd_CrearRegistroIntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_CrearRegistroIntLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel12)
+                .addGap(76, 76, 76)
+                .addGroup(jd_CrearRegistroIntLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_NombreCampoInt)
+                    .addComponent(jf_Integer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addComponent(jb_AceptarRegistroString)
+                .addGap(33, 33, 33))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -954,6 +1044,7 @@ public class GUI extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) model;
 
         Object[] insertarray = new Object[metadata.getCampos().size()];
+        /*
         for (int i = 0; i < metadata.getCampos().size(); i++) {
             boolean exito = false;
             while (exito == false) {
@@ -976,7 +1067,54 @@ public class GUI extends javax.swing.JFrame {
                 }
             }
 
+        }*/
+        
+        /*String formato = "";
+                for (int j = 0; j < ((Campos)metadata.getCampos().get(i)).getSize_dec(); j++) {
+                    formato+="#";
+                }*/
+        for (int i = 0; i < metadata.getCampos().size(); i++) {
+            if (Integer.parseInt(metadata.getTipos().get(i).toString()) == 1) {
+                
+                jl_NombreCampoInt.setText(metadata.getCampos().get(i).toString());
+                jf_Integer.setValue(0);
+                jd_CrearRegistroInt.pack();
+                jd_CrearRegistroInt.setModal(true);
+                jd_CrearRegistroInt.setLocationRelativeTo(this);
+                jd_CrearRegistroInt.setVisible(true);
+                int integer = (int) jf_Integer.getValue();
+                insertarray[i] = integer;
+            }else if(Integer.parseInt(metadata.getTipos().get(i).toString()) == 2){
+                jl_NombreCampoInt.setText(metadata.getCampos().get(i).toString());
+                jf_Integer.setValue(0);
+                jd_CrearRegistroInt.pack();
+                jd_CrearRegistroInt.setModal(true);
+                jd_CrearRegistroInt.setLocationRelativeTo(this);
+                jd_CrearRegistroInt.setVisible(true);
+                long N_long = (long) jf_Integer.getValue();
+                insertarray[i] = N_long;
+            }else if(Integer.parseInt(metadata.getTipos().get(i).toString()) == 3){
+                
+                jl_nombreCampo.setText(metadata.getCampos().get(i).toString());
+                jd_CrearRegistroString.pack();
+                jd_CrearRegistroString.setModal(true);
+                jd_CrearRegistroString.setLocationRelativeTo(this);
+                jd_CrearRegistroString.setVisible(true);
+                insertarray[i] = jt_RegistroString.getText();
+                
+            }else if(Integer.parseInt(metadata.getTipos().get(i).toString()) == 4){
+                jl_nombreCampo.setText(metadata.getCampos().get(i).toString());
+                jd_CrearRegistroString.pack();
+                jd_CrearRegistroString.setModal(true);
+                jd_CrearRegistroString.setLocationRelativeTo(this);
+                jd_CrearRegistroString.setVisible(true);
+                String entrada = jt_RegistroString.getText();
+                insertarray[i] = entrada.charAt(0);
+            }
+            jt_RegistroString.setText("");
+            jf_Integer.setValue(0);
         }
+        
         ArrayList TrimaExport2 = new ArrayList();
 
         for (int i = 0; i < insertarray.length; i++) {
@@ -1775,6 +1913,14 @@ public class GUI extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jb_RegresarRegistroStringMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_RegresarRegistroStringMouseClicked
+        jd_CrearRegistroString.dispose();
+    }//GEN-LAST:event_jb_RegresarRegistroStringMouseClicked
+
+    private void jb_AceptarRegistroStringMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_AceptarRegistroStringMouseClicked
+        jd_CrearRegistroInt.dispose();
+    }//GEN-LAST:event_jb_AceptarRegistroStringMouseClicked
     public static void exportXML(ArrayList Campos, ArrayList Regs, String Direccion) {
         Document document = null;
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -2335,6 +2481,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2373,17 +2521,24 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton jb_AceptarRegistroString;
     private javax.swing.JButton jb_RegresarDeCrearCampo;
+    private javax.swing.JButton jb_RegresarRegistroString;
     private javax.swing.JButton jb_TerminarCreacionCampo;
     private javax.swing.JButton jb_regresarBuscarregistro;
     private javax.swing.JButton jb_regresarInfoRegistro;
     private javax.swing.JDialog jd_BuscarRegistro;
     private javax.swing.JDialog jd_CrearCampo;
-    private javax.swing.JDialog jd_CrearRegistro;
+    private javax.swing.JDialog jd_CrearRegistroInt;
+    private javax.swing.JDialog jd_CrearRegistroString;
     private javax.swing.JDialog jd_MostrarRegistro;
+    private javax.swing.JSpinner jf_Integer;
+    private javax.swing.JLabel jl_NombreCampoInt;
     private javax.swing.JLabel jl_nameCampo;
+    private javax.swing.JLabel jl_nombreCampo;
     private javax.swing.JLabel jl_tipodevariable;
     private javax.swing.JSpinner js_key;
+    private javax.swing.JTextField jt_RegistroString;
     private javax.swing.JRadioButton rb_tip_char;
     private javax.swing.JRadioButton rb_tip_integer;
     private javax.swing.JRadioButton rb_tip_long;
