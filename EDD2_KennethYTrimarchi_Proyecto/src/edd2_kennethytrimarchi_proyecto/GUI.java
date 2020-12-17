@@ -756,6 +756,7 @@ public class GUI extends javax.swing.JFrame {
 
         jMenu5.setText("Exportar");
 
+        jMenuItem14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edd2_kennethytrimarchi_proyecto/icons/excel24.png"))); // NOI18N
         jMenuItem14.setText("Exportar a Excel");
         jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -764,6 +765,7 @@ public class GUI extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem14);
 
+        jMenuItem15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edd2_kennethytrimarchi_proyecto/icons/xml24.png"))); // NOI18N
         jMenuItem15.setText("Exportar a XML");
         jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

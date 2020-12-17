@@ -566,6 +566,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem14">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/edd2_kennethytrimarchi_proyecto/icons/excel24.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Exportar a Excel"/>
               </Properties>
               <Events>
@@ -574,6 +577,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem15">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/edd2_kennethytrimarchi_proyecto/icons/xml24.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Exportar a XML"/>
               </Properties>
               <Events>
