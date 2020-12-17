@@ -88,6 +88,11 @@ public class Metadata implements Serializable {
         this.campos = campos;
 
     }
+    
+    public void addCampo(Campos campo)
+    {
+       this.campos.add(campo);
+    }
 
     public Metadata(String nombre) {
         this.nombre = nombre;

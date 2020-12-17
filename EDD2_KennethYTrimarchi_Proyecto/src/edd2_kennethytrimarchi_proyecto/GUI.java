@@ -105,6 +105,24 @@ public class GUI extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         ta_infoRegistro = new javax.swing.JTextArea();
         jb_regresarInfoRegistro = new javax.swing.JButton();
+        jd_CrearCampo = new javax.swing.JDialog();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        tf_NombredelCampo = new javax.swing.JTextField();
+        jl_nameCampo = new javax.swing.JLabel();
+        label_llavePrim = new javax.swing.JLabel();
+        rb_key_si = new javax.swing.JRadioButton();
+        rb_key_no = new javax.swing.JRadioButton();
+        jl_longitud = new javax.swing.JLabel();
+        sp_LongitudCampo = new javax.swing.JSpinner();
+        label_llaveCandi = new javax.swing.JLabel();
+        rb_cand_si = new javax.swing.JRadioButton();
+        rb_cand_no = new javax.swing.JRadioButton();
+        jl_tipodevariable = new javax.swing.JLabel();
+        rb_tip_string = new javax.swing.JRadioButton();
+        rb_tip_integer = new javax.swing.JRadioButton();
+        jb_TerminarCreacionCampo = new javax.swing.JButton();
+        jb_RegresarDeCrearCampo = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -254,6 +272,156 @@ public class GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(jb_regresarInfoRegistro)
                 .addContainerGap())
+        );
+
+        jd_CrearCampo.setBackground(new java.awt.Color(0, 0, 255));
+        jd_CrearCampo.setUndecorated(true);
+
+        jPanel14.setBackground(new java.awt.Color(0, 255, 153));
+        jPanel14.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel10.setText("CREACIÓN DE CAMPO");
+
+        jl_nameCampo.setText("Nombre del campo:");
+
+        label_llavePrim.setText("Es llave primaria?");
+
+        rb_key_si.setText("Si");
+
+        rb_key_no.setSelected(true);
+        rb_key_no.setText("No");
+
+        jl_longitud.setText("Longitud del campo:");
+
+        label_llaveCandi.setText("Es llave candidata?");
+
+        rb_cand_si.setText("Si");
+
+        rb_cand_no.setSelected(true);
+        rb_cand_no.setText("No");
+
+        jl_tipodevariable.setText("Tipo de variable:");
+
+        rb_tip_string.setSelected(true);
+        rb_tip_string.setText("String");
+
+        rb_tip_integer.setText("Integer");
+
+        jb_TerminarCreacionCampo.setBackground(new java.awt.Color(204, 255, 255));
+        jb_TerminarCreacionCampo.setText("Crear Campo");
+        jb_TerminarCreacionCampo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_TerminarCreacionCampoMouseClicked(evt);
+            }
+        });
+
+        jb_RegresarDeCrearCampo.setBackground(new java.awt.Color(204, 255, 255));
+        jb_RegresarDeCrearCampo.setText("Regresar");
+        jb_RegresarDeCrearCampo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_RegresarDeCrearCampoMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(jb_RegresarDeCrearCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addComponent(jl_longitud)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(sp_LongitudCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addComponent(jl_nameCampo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tf_NombredelCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addComponent(jl_tipodevariable, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rb_tip_string)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rb_tip_integer)))))
+                .addGap(125, 125, Short.MAX_VALUE)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                            .addComponent(rb_cand_si)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(rb_cand_no)
+                            .addGap(18, 18, 18))
+                        .addComponent(jb_TerminarCreacionCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_llaveCandi, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_llavePrim)
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addComponent(rb_key_si)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rb_key_no)))
+                        .addGap(8, 8, 8)))
+                .addGap(56, 56, 56))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(193, 193, 193))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel10)
+                .addGap(52, 52, 52)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_nameCampo)
+                    .addComponent(tf_NombredelCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_llavePrim))
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rb_key_no)
+                            .addComponent(rb_key_si)))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jl_longitud)
+                            .addComponent(sp_LongitudCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addComponent(label_llaveCandi)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(rb_cand_si)
+                        .addComponent(rb_cand_no))
+                    .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jl_tipodevariable)
+                        .addComponent(rb_tip_string)
+                        .addComponent(rb_tip_integer)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jb_TerminarCreacionCampo, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                    .addComponent(jb_RegresarDeCrearCampo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(24, 24, 24))
+        );
+
+        javax.swing.GroupLayout jd_CrearCampoLayout = new javax.swing.GroupLayout(jd_CrearCampo.getContentPane());
+        jd_CrearCampo.getContentPane().setLayout(jd_CrearCampoLayout);
+        jd_CrearCampoLayout.setHorizontalGroup(
+            jd_CrearCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jd_CrearCampoLayout.setVerticalGroup(
+            jd_CrearCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1416,6 +1584,37 @@ public class GUI extends javax.swing.JFrame {
         jd_MostrarRegistro.dispose();
         jd_BuscarRegistro.setVisible(true);
     }//GEN-LAST:event_jb_regresarInfoRegistroMouseClicked
+
+    private void jb_TerminarCreacionCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_TerminarCreacionCampoMouseClicked
+        String nombre = tf_NombredelCampo.getText();
+        int longitud;
+        //newLongitud = (int) js_InfoLongitudCampo.getValue();
+
+        longitud = (int) sp_LongitudCampo.getValue();
+
+        if (ExisteLlavePrim) {
+            if(rb_tip_integer.isSelected() && rb_cand_si.isSelected())
+            campos.add(new Campo(nombre, "int", false, longitud,true));
+            else
+            campos.add(new Campo(nombre, "String", false, longitud,false));
+        }else{
+            if(rb_tip_integer.isSelected() && rb_key_si.isSelected())
+            campos.add(new Campo(nombre, "int", true, longitud,false));
+            else
+            campos.add(new Campo(nombre, "String", false, longitud,false));
+        }
+
+        tf_NombredelCampo.setText("");
+        sp_LongitudCampo.setValue(0);
+        rb_key_no.setSelected(true);
+        rb_tip_string.setSelected(true);
+    }//GEN-LAST:event_jb_TerminarCreacionCampoMouseClicked
+
+    private void jb_RegresarDeCrearCampoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_RegresarDeCrearCampoMouseClicked
+        tf_NombredelCampo.setText("");
+        sp_LongitudCampo.setValue(0);
+        jd_CrearCampo.dispose();
+    }//GEN-LAST:event_jb_RegresarDeCrearCampoMouseClicked
     public static void exportXML(ArrayList Campos, ArrayList Regs, String Direccion) {
         Document document = null;
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -1968,6 +2167,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1995,6 +2195,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -2002,12 +2203,28 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton jb_RegresarDeCrearCampo;
+    private javax.swing.JButton jb_TerminarCreacionCampo;
     private javax.swing.JButton jb_regresarBuscarregistro;
     private javax.swing.JButton jb_regresarInfoRegistro;
     private javax.swing.JDialog jd_BuscarRegistro;
+    private javax.swing.JDialog jd_CrearCampo;
     private javax.swing.JDialog jd_CrearRegistro;
     private javax.swing.JDialog jd_MostrarRegistro;
+    private javax.swing.JLabel jl_longitud;
+    private javax.swing.JLabel jl_nameCampo;
+    private javax.swing.JLabel jl_tipodevariable;
     private javax.swing.JSpinner js_key;
+    private javax.swing.JLabel label_llaveCandi;
+    private javax.swing.JLabel label_llavePrim;
+    private javax.swing.JRadioButton rb_cand_no;
+    private javax.swing.JRadioButton rb_cand_si;
+    private javax.swing.JRadioButton rb_key_no;
+    private javax.swing.JRadioButton rb_key_si;
+    private javax.swing.JRadioButton rb_tip_integer;
+    private javax.swing.JRadioButton rb_tip_string;
+    private javax.swing.JSpinner sp_LongitudCampo;
     private javax.swing.JTextArea ta_infoRegistro;
+    private javax.swing.JTextField tf_NombredelCampo;
     // End of variables declaration//GEN-END:variables
 }
