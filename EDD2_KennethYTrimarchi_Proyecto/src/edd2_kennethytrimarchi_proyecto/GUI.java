@@ -663,6 +663,7 @@ public class GUI extends javax.swing.JFrame {
         jMenu1.setText("File");
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edd2_kennethytrimarchi_proyecto/icons/guardarArchivo24.png"))); // NOI18N
         jMenuItem5.setText("Save");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -672,6 +673,7 @@ public class GUI extends javax.swing.JFrame {
         jMenu1.add(jMenuItem5);
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edd2_kennethytrimarchi_proyecto/icons/loadArchivo24.png"))); // NOI18N
         jMenuItem1.setText("Load");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -681,6 +683,7 @@ public class GUI extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edd2_kennethytrimarchi_proyecto/icons/newArchivo24.png"))); // NOI18N
         jMenuItem3.setText("New");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -690,6 +693,7 @@ public class GUI extends javax.swing.JFrame {
         jMenu1.add(jMenuItem3);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_0, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edd2_kennethytrimarchi_proyecto/icons/close24.png"))); // NOI18N
         jMenuItem4.setText("Close");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -703,6 +707,7 @@ public class GUI extends javax.swing.JFrame {
         jMenu2.setText("Campos");
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_J, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edd2_kennethytrimarchi_proyecto/icons/crearCampo24.png"))); // NOI18N
         jMenuItem6.setText("Crear Campo");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -711,6 +716,7 @@ public class GUI extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem6);
 
+        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edd2_kennethytrimarchi_proyecto/icons/modificar Campo24.png"))); // NOI18N
         jMenuItem7.setText("Modificar Campo");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -719,6 +725,7 @@ public class GUI extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem7);
 
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edd2_kennethytrimarchi_proyecto/icons/eliminarCampo24.png"))); // NOI18N
         jMenuItem8.setText("Borrar Campo");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -750,6 +757,7 @@ public class GUI extends javax.swing.JFrame {
         });
 
         jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edd2_kennethytrimarchi_proyecto/icons/registroInsertar24.png"))); // NOI18N
         jMenuItem10.setText("Crear Registro");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -758,6 +766,7 @@ public class GUI extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem10);
 
+        jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edd2_kennethytrimarchi_proyecto/icons/eliminarRegistro24.png"))); // NOI18N
         jMenuItem11.setText("Borrar Registro");
         jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -766,6 +775,7 @@ public class GUI extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem11);
 
+        jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edd2_kennethytrimarchi_proyecto/icons/buscarRegistro24.png"))); // NOI18N
         jMenuItem12.setText("Buscar Registro");
         jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
