@@ -180,53 +180,9 @@ public class Kenneth {
     ////////////////////////////////////////////////
     ////////////////////////////////////////////////
     ////////////////////////////////////////////////
-    public void CreateCampos(Metadata metadata) throws IOException, ParseException {
+    public void CreateCampos(Metadata metadata, ArrayList campos, ArrayList types) throws IOException, ParseException {
         if (metadata.getNumregistros() == 0) {
-            //System.out.println("Para dejar de insertar utilize el 0");
-            JOptionPane.showMessageDialog(null, "Para dejar de insertar Ingrese 0\nEl primer campo es PRIMARY KEY");
-            String input = "";
-
-            //ArrayList<Campos> Campo=new ArrayList<>();
-            ArrayList<String> campos = new ArrayList<String>();
-            ArrayList<Integer> types = new ArrayList<Integer>();
-            // preparing containers for the information
-            int contador = 0;
-
-            while (input.equals("0") != true) { //Mientras con centinela para que el usuario eliga cuando detenerse TEMP To deprecate.
-                //   System.out.println("Ingrese el nombre del campo: ");
-                boolean exito = false;
-                while (exito == false) {
-                    try {
-                        input = JOptionPane.showInputDialog(null, "Ingrese el nombre del Campo " + (contador + 1));
-                        if (input.equals("0") != true) {
-                            //#Crash
-                        }
-                        exito = true;
-                    } catch (Exception e) {
-                        System.out.println("Error Prevented.");
-                    }
-
-                }
-
-                if (input.equals("0") != true && contador == 0) {
-
-                    campos.add(input);  //Guardo en el arraylist todos los campos
-                    types.add(1);
-                    contador++;
-                } else if (input.equals("0") != true) {
-                    try {
-                        int type = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el tipo: \n1.Int\n2.Long\n3.String\n4.Char"));
-                        types.add(type);
-                        campos.add(input);
-                        contador++;
-
-                    } catch (Exception e) {
-                        JOptionPane.showMessageDialog(null, "Incorrect Value!");
-                        // e.printStackTrace();
-                    }
-                }
-
-            } //End while de insertar campos por usuario.
+            
 
             metadata.setCampos(campos); //Lo guardo en la metadata para la Jtable.
             metadata.setTipos(types);

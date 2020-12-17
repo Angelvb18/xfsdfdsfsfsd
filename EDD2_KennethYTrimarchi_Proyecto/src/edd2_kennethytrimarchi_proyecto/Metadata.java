@@ -59,10 +59,6 @@ public class Metadata implements Serializable {
 
     }
 
-    
-
- 
-
     public int getNumregistros() {
         return numregistros;
     }
@@ -89,11 +85,6 @@ public class Metadata implements Serializable {
 
     }
     
-    public void addCampo(Campos campo)
-    {
-       this.campos.add(campo);
-    }
-
     public Metadata(String nombre) {
         this.nombre = nombre;
     }
