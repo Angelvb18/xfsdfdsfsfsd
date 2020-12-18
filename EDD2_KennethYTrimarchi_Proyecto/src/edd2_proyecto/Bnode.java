@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edd2_proyecto;
 
 import java.io.Serializable;
 
-/**
- *
- * @author X
- */
 public class Bnode implements Serializable{
 
     Registro[] key;  // An array of keys 
@@ -22,8 +13,6 @@ public class Bnode implements Serializable{
     public Bnode(int _t, boolean _leaf) {
         t = _t;
         leaf = _leaf;
-        // Allocate memory for maximum number of possible keys 
-        // and child pointers 
         key = new Registro[2 * t - 1];
         hijos = new Bnode[2 * t];
 
@@ -89,13 +78,13 @@ public class Bnode implements Serializable{
             {
                 hijos[i].traverse();
             }
-            //cout << " " << keys[i]; 
+           
             System.out.print(", " + key[i]);
         }
 
         // Print the subtree rooted with last child 
         if (leaf == false) {
-            //C[i]->traverse();
+            
             hijos[i].traverse();
         }
     }
@@ -231,11 +220,11 @@ public class Bnode implements Serializable{
 
     public int findKey(Registro k) {
         int idx = 0;
-        //Registro x = new Registro(idx);
+        
         while ((idx < n) && (key[idx].getKey() < k.getKey())) {
             ++idx;
         }
-       // System.out.println("Raro-----------------------");
+     
         return idx;
     }
 
@@ -300,36 +289,37 @@ public class Bnode implements Serializable{
     void removeFromNonLeaf(int idx) {
         Registro k = key[idx];
 
-        // If the child that precedes k (C[idx]) has atleast t keys, 
-        // find the predecessor 'pred' of k in the subtree rooted at 
-        // C[idx]. Replace k by pred. Recursively delete pred 
-        // in C[idx] 
+        /* If the child that precedes k (C[idx]) has atleast t keys, 
+         find the predecessor 'pred' of k in the subtree rooted at 
+         C[idx]. Replace k by pred. Recursively delete pred 
+         in C[idx] */
         if (hijos[idx].getN() >= t) {
             //int pred = getPred(idx); 
             Registro pred = getPred(idx);
             key[idx] = pred;
             hijos[idx].remove(pred);
-        } // If the child C[idx] has less that t keys, examine C[idx+1]. 
-        // If C[idx+1] has atleast t keys, find the successor 'succ' of k in 
-        // the subtree rooted at C[idx+1] 
-        // Replace k by succ 
-        // Recursively delete succ in C[idx+1] 
+        } 
+        /* If the child C[idx] has less that t keys, examine C[idx+1]. 
+        If C[idx+1] has atleast t keys, find the successor 'succ' of k in 
+        the subtree rooted at C[idx+1] 
+        Replace k by succ 
+        Recursively delete succ in C[idx+1] */
         else if (hijos[idx + 1].n >= t) {
             Registro succ = getSucc(idx);
             key[idx] = succ;
             hijos[idx + 1].remove(succ);
-        } // If both C[idx] and C[idx+1] has less that t keys,merge k and all of C[idx+1] 
-        // into C[idx] 
-        // Now C[idx] contains 2t-1 keys 
-        // Free C[idx+1] and recursively delete k from C[idx] 
+        } 
+        /* If both C[idx] and C[idx+1] has less that t keys,merge k and all of C[idx+1] into C[idx] 
+        Now C[idx] contains 2t-1 keys 
+        Free C[idx+1] and recursively delete k from C[idx] */
         else {
             merge(idx);
             hijos[idx].remove(k);
         }
         return;
     }
+    
     // A function to get predecessor of keys[idx] 
-
     Registro getPred(int idx) {
         // Keep moving to the right most node until we reach a leaf 
         Bnode cur = hijos[idx];
@@ -342,7 +332,6 @@ public class Bnode implements Serializable{
     }
 
     Registro getSucc(int idx) {
-
         // Keep moving the left most node starting from C[idx+1] until we reach a leaf 
         Bnode cur = hijos[idx + 1];
         while (!cur.leaf) {
@@ -353,20 +342,22 @@ public class Bnode implements Serializable{
         return cur.key[0];
     }
 
-// A function to fill child C[idx] which has less than t-1 keys 
+    // A function to fill child C[idx] which has less than t-1 keys 
     void fill(int idx) {
 
         // If the previous child(C[idx-1]) has more than t-1 keys, borrow a key 
         // from that child 
         if (idx != 0 && hijos[idx - 1].n >= t) {
             borrowFromPrev(idx);
-        } // If the next child(C[idx+1]) has more than t-1 keys, borrow a key 
-        // from that child 
+        } 
+        // If the next child(C[idx+1]) has more than t-1 keys, borrow a key from that child 
         else if (idx != n && hijos[idx + 1].n >= t) {
             borrowFromNext(idx);
-        } // Merge C[idx] with its sibling 
-        // If C[idx] is the last child, merge it with with its previous sibling 
-        // Otherwise merge it with its next sibling 
+        } 
+        /* 
+        Merge C[idx] with its sibling If C[idx] is the last child, merge it with with its previous sibling 
+        Otherwise merge it with its next sibling 
+        */
         else {
             if (idx != n) {
                 merge(idx);
@@ -377,17 +368,19 @@ public class Bnode implements Serializable{
         return;
     }
 
-// A function to borrow a key from C[idx-1] and insert it 
-// into C[idx] 
+    // A function to borrow a key from C[idx-1] and insert it 
+    // into C[idx] 
     void borrowFromPrev(int idx) {
 
         Bnode child = hijos[idx];
         Bnode sibling = hijos[idx - 1];
 
-        // The last key from C[idx-1] goes up to the parent and key[idx-1] 
-        // from parent is inserted as the first key in C[idx]. Thus, the  loses 
-        // sibling one key and child gains one key 
-        // Moving all key in C[idx] one step ahead 
+        /* 
+        The last key from C[idx-1] goes up to the parent and key[idx-1] 
+        from parent is inserted as the first key in C[idx]. 
+        Thus, the  loses sibling one key and child gains one key 
+        Moving all key in C[idx] one step ahead 
+        */
         for (int i = child.n - 1; i >= 0; --i) {
             child.key[i + 1] = child.key[i];
         }
@@ -454,8 +447,8 @@ public class Bnode implements Serializable{
         return;
     }
 
-// A function to merge C[idx] with C[idx+1] 
-// C[idx+1] is freed after merging 
+    // A function to merge C[idx] with C[idx+1] 
+    // C[idx+1] is freed after merging  
     void merge(int idx) {
         Bnode child = hijos[idx];
         Bnode sibling = hijos[idx + 1];
@@ -498,7 +491,7 @@ public class Bnode implements Serializable{
         return;
     }
 
-// The main function that inserts a new key in this B-Tree 
+    // The main function that inserts a new key in this B-Tree 
     @Override
     public String toString() {
         String a = "";
@@ -511,3 +504,5 @@ public class Bnode implements Serializable{
     }
 
 }
+
+

@@ -1,23 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edd2_proyecto;
 
 import java.io.Serializable;
 import java.util.Queue;
 
-/**
- *
- * @author X
- */
 public class BTree implements Serializable {
 
     Bnode root; // Pointer to root node 
     int t = 3;  // Minimum degree
 
-    // Constructor (Initializes tree as empty) 
     BTree() {
         root = null;
 
@@ -85,10 +75,7 @@ public class BTree implements Serializable {
 
     }
 
-    // function to search a key in this tree 
     Bnode search(Registro k) {
-        //return (root == NULL)? NULL : root->search(k); c++
-        //return (root == null) ? null : root.search(k);
         if (root == null) {
             return null;
         } else {
@@ -169,3 +156,4 @@ public class BTree implements Serializable {
     }
 
 }
+

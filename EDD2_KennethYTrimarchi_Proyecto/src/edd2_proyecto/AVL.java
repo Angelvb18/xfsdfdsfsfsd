@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edd2_proyecto;
 
-/**
- *
- * @author X
- */
-public class DLL {
-    // Class for Doubly Linked List 
+public class AVL {
+     
 
     Node head; // Cabeza de la Lista
 
-    /* D-Linked List Nodess*/
+    
     class Node {
 
         Data reg;
@@ -85,21 +76,14 @@ public class DLL {
             if (needed > last.data) {
                 last = last.next;
             } else {
-                //dev=last.data;
-                /**
-                 * break;
-                 *
-                 */
                 found = true;
                 break;
             }
         }
         if (found == false) {
             if (needed > last.data) {
-                // dev=100;
                 return null;
             } else {
-                //return last.data;
                 return last;
             }
         } else {
@@ -152,7 +136,7 @@ public class DLL {
         if (head == null || delete == null) {
             return;
         }
-        // If node to be deleted is head node 
+        // If nodo a borrar es head node
         if (head == delete) {
             head = delete.next;
         }
@@ -166,3 +150,4 @@ public class DLL {
     }
 
 }
+

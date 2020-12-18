@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edd2_proyecto;
 
 import com.sun.javafx.property.adapter.PropertyDescriptor;
@@ -58,10 +53,6 @@ import java.util.logging.Logger;
 import javax.swing.JTable;
 import org.w3c.dom.Text;
 
-/**
- *
- * @author Kenneth Van Yableth
- */
 public class GUI extends javax.swing.JFrame {
 
     /**
@@ -978,35 +969,7 @@ public class GUI extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) model;
 
         Object[] insertarray = new Object[metadata.getCampos().size()];
-        /*
-        for (int i = 0; i < metadata.getCampos().size(); i++) {
-            boolean exito = false;
-            while (exito == false) {
-                try {
-                    String temp = JOptionPane.showInputDialog(null, "Ingrese: " + metadata.getCampos().get(i).toString() + " Tipo: " + metadata.getTipos().get(i).toString());
-                    //this.setVisible(false);
-                    
-                    if (Integer.parseInt(metadata.getTipos().get(i).toString()) == 1) {
-                        insertarray[i] = Integer.parseInt(temp);
-                    } else if (Integer.parseInt(metadata.getTipos().get(i).toString()) == 2) {
-                        insertarray[i] = Long.parseLong(temp);
-                    } else if (Integer.parseInt(metadata.getTipos().get(i).toString()) == 3) {
-                        insertarray[i] = temp;
-                    } else if (Integer.parseInt(metadata.getTipos().get(i).toString()) == 4) {
-                        insertarray[i] = temp.charAt(0);
-                    }
-                    exito = true;
-                } catch (Exception e) {
-                    System.out.println("Crash Prevented // Create Register Function");
-                }
-            }
-
-        }*/
         
-        /*String formato = "";
-                for (int j = 0; j < ((Campos)metadata.getCampos().get(i)).getSize_dec(); j++) {
-                    formato+="#";
-                }*/
         for (int i = 0; i < metadata.getCampos().size(); i++) {
             if (Integer.parseInt(metadata.getTipos().get(i).toString()) == 1) {
                 
@@ -1054,7 +1017,6 @@ public class GUI extends javax.swing.JFrame {
         for (int i = 0; i < insertarray.length; i++) {
             TrimaExport2.add(insertarray[i]);
         }
-        //Export to Trima in this line.
         Registro temporal = new Registro(Integer.parseInt(insertarray[0].toString()));
 
         if (metadata.getArbolB().search(temporal) == null) {
@@ -1122,17 +1084,13 @@ public class GUI extends javax.swing.JFrame {
         String direction;
 
         //Creo un nuevo JFileChooser para que eliga donde guardar.
-        //Le digo que aparezca en el home del proyecto .. Crea un problema que la Metadata se puede guardar en cualquier sitio.
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setCurrentDirectory(new File("./"));
         FileNameExtensionFilter data = new FileNameExtensionFilter("DAT FILE", "dat");
         fileChooser.setFileFilter(data);
         int seleccion = fileChooser.showOpenDialog(this);
         if (seleccion == JFileChooser.APPROVE_OPTION) { //Cuando le da guardar
-            //System.out.println(fileChooser.getCurrentDirectory().toString());
             File file = null;
-            // FileOutputStream fos = null;
-            // ObjectOutputStream ous = null;
             try {
                 if (fileChooser.getFileFilter().getDescription().equals("DAT FILE")) { //Chequea si lo que quiere guardar es DAT FILE
                     direction = fileChooser.getSelectedFile().getPath() + ".dat";
@@ -1144,20 +1102,14 @@ public class GUI extends javax.swing.JFrame {
                 } else {
                     JOptionPane.showMessageDialog(this, "Unable to Load. Use DAT FILE.");
                 }
-                // fos = new FileOutputStream(file);
-                //  ous = new ObjectOutputStream(fos);
-                //  ous.flush(); //Lo oficializo
-
-                // RAfile=new RandomAccessFile(file,"rw");
+                ;
             } catch (Exception e) {
-                //e.printStackTrace();
                 JOptionPane.showMessageDialog(this, "Something Went Wrong! Contact System Administrator.");
             }
             try {
-                //ous.close();
-                // fos.close();
+                
             } catch (Exception e) {
-                //e.printStackTrace();
+                
                 JOptionPane.showMessageDialog(this, "Fatal error closing files.");
             }
 
@@ -1168,7 +1120,7 @@ public class GUI extends javax.swing.JFrame {
 
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        // TODO add your handling code here:
+         
         if (mode == -1) {
             JOptionPane.showMessageDialog(null, "Seleccione un Registro para borrar.");
         } else {
@@ -1179,7 +1131,7 @@ public class GUI extends javax.swing.JFrame {
                     ExportTrima3.add(Table.getValueAt(rowRemoval, i));
                 }
                 mode = -1;
-                //Exportar a Trima Aqui.
+                
                 EliminarDatoArchivo(ExportTrima3);
                 System.out.println(metadata.getNumregistros());
                 metadata.subtractnumregistros();
@@ -1197,29 +1149,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-        // TODO add your handling code here:
-        /*try {
-            int Primarykey = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el PrimaryKey del registro a buscar."));
-            Registro temporal = new Registro(Primarykey);
-            Bnode x;
-            //System.out.println("------------");
-            if ((x = metadata.getArbolB().search(temporal)) == null) {
-                JOptionPane.showMessageDialog(null, "No se pudo encontrar");
-                // System.out.println("------------");
-            } else {
-
-                Data datos = BuscarDatoArchivo(temporal);
-                String info = "Registro: ";
-                for (int i = 0; i < datos.datos.size(); i++) {
-                    info += datos.datos.get(i) + " - ";
-                }
-                JOptionPane.showMessageDialog(this, info);
-
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Operation aborted.");
-            //e.printStackTrace();
-        }*/
+        
         
         this.setVisible(false);
         jd_BuscarRegistro.pack();
@@ -1275,8 +1205,7 @@ public class GUI extends javax.swing.JFrame {
 
             }
         } catch (Exception e) {
-            //JOptionPane.showMessageDialog(null, "Operation aborted.");
-            //e.printStackTrace();
+            
         }
         
     }//GEN-LAST:event_jButton2MouseClicked
@@ -1344,7 +1273,6 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1FocusLost
 
     private void TablePropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_TablePropertyChange
-        // TODO add your handling code here:
         try {
             if (Table.isEditing() && tablemodification == 0) {
                 mode = -1;
@@ -1393,9 +1321,8 @@ public class GUI extends javax.swing.JFrame {
 
                                     }
                                     System.out.println("########################################################");
-                                    System.out.println("Exportar a Trima valores: " + TrimaExport);
-                                    //Apartir de aqui se exporta el nuevo valor del registro. AKA TrimaExport.
-                                    //Export to Trima Here.
+                                    System.out.println("Exportar valores: " + TrimaExport);
+                                    
                                     if (currentColumn == 0) {
                                         JOptionPane.showMessageDialog(null, " No se puede modificar la primary key");
                                         Table.setValueAt(oldcellvalue, currentRow, currentColumn);
@@ -1422,28 +1349,13 @@ public class GUI extends javax.swing.JFrame {
 
                 x.removeCellEditorListener(Table);
 
-                /*tablemodification = 1;
-                currentRow = Table.getEditingRow();
-                currentColumn = Table.getEditingColumn();
-                oldcellvalue = Table.getValueAt(currentRow, currentColumn).toString();
-                System.out.println("Original Value: " + oldcellvalue);*/
+                
             }
         } catch (Exception e) {
             System.out.println("FATAL ERROR. Expect Table Failures");
         }
 
-        /*else if (tablemodification == 1) {
-            tablemodification = 0;
-            if (currentRow == Table.getSelectedRow() && currentColumn == Table.getSelectedColumn()) {
-                if (oldcellvalue != Table.getValueAt(currentRow, currentColumn).toString()) {
-                    System.out.println("Different Cell value detected.");
-                } else {
-                    System.out.println("Same Cell value detected.");
-                }
-                System.out.println("Cell value finished editing.");
-            }
-
-        }*/
+        
     }//GEN-LAST:event_TablePropertyChange
 
     private void TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableMouseClicked
@@ -1455,12 +1367,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_TableMouseClicked
 
     private void TableFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_TableFocusLost
-        // TODO add your handling code here:\
-        /*
-        int Row = Table.getEditingRow();
-        int Column = Table.getEditingColumn();
-        System.out.println("Row:"+Row);
-        System.out.println("Column:"+Column);*/
+        
     }//GEN-LAST:event_TableFocusLost
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
@@ -1504,9 +1411,6 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        // TODO add your handling code here:
-        
-        // TODO add your handling code here:
         if (file == null || metadata == null) {
             JOptionPane.showMessageDialog(null, "No hay ningun file cargado");
         } else {
@@ -1516,10 +1420,8 @@ public class GUI extends javax.swing.JFrame {
                 JTable tablavieja = (JTable) Table;
                 Metadata vieja = (Metadata) metadata;
 
-                AvailList = new DLL();
+                AvailList = new AVL();
                 RAfile = null;
-                //Metadata temporal = new Metadata();
-                //temporal = metadata;
                 LoadFile();
                 if (FileSuccess == 1) {
 
@@ -1572,10 +1474,9 @@ public class GUI extends javax.swing.JFrame {
                                         System.out.println(trabajando);
                                         metadata.addnumregistros();
                                         try {
-                                            EscribirDatosRegistro(superrow);//Send Array to Trima
+                                            EscribirDatosRegistro(superrow);
                                             BuscarDatoArchivo(trabajando);
                                         } catch (Exception ex) {
-                                            //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
                                             System.out.println(ex);
                                             ex.printStackTrace();
                                         }
@@ -1587,7 +1488,7 @@ public class GUI extends javax.swing.JFrame {
                                     }
                                 } else {
                                     JOptionPane.showMessageDialog(null, "Dato Ya existe!");
-                                    // System.out.println(metadata.getArbolB().search(trabajando));
+                                    ;
                                 }
                             }
                         } else {
@@ -1613,7 +1514,6 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_AceptarRegistroStringMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
         if (FileSuccess == 1 && metadata.getNumregistros() > 0) {
             metadata = new Metadata();
             BuildTable(metadata, 1);
@@ -1697,7 +1597,7 @@ public class GUI extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) model;
         metadata.addnumregistros();
 
-        Object insertArray[] = KennethExport2.toArray();
+        Object insertArray[] = ArrayExport.toArray();
 
         modelo.addRow(insertArray);
 
@@ -1706,17 +1606,9 @@ public class GUI extends javax.swing.JFrame {
     }
 
     private void CreateFile() {
-        //Borro lo que tengo en la metadata
-        //metadata = new Metadata();
-        //Le digo a la tabla que se borre.
-        //BuildTable(metadata, 1);
-        //OUTPUT TESTS ----- IGNORE
-
-        // Output Tests ------ IGNORE.
         FileSuccess = 0;
         String direction;
         //Creo un nuevo JFileChooser para que eliga donde guardar.
-        //Le digo que aparezca en el home del proyecto .. Crea un problema que la Metadata se puede guardar en cualquier sitio.
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setCurrentDirectory(new File("./"));
         FileNameExtensionFilter data = new FileNameExtensionFilter("DAT FILE", "dat");
@@ -1776,10 +1668,6 @@ public class GUI extends javax.swing.JFrame {
     }
 
     private void NewFile() {
-        // Protocolo de creacion de Metadata. 
-        // SE LE ADVIERTE AL USUARIO QUE INFORMACION ACTUAL SERA BORRADA.
-        // 1. Se le pide el nombre de la metadata al usuario.
-        // 2. Se crea Metadata.
         String direction; // Nombre del archivo .dat que se creara/
         int option = JOptionPane.showConfirmDialog(this, "Do you want to save your current progress?");
         if (option == JOptionPane.NO_OPTION) { //Si no quiere guardar lo que hizo.
@@ -1791,8 +1679,7 @@ public class GUI extends javax.swing.JFrame {
 
         } else if (option == JOptionPane.YES_OPTION) {
             SaveFile();
-            //una vez se guarda la info se crea el archivo.
-            //CreateFile();
+            
 
         } else {
             System.out.println("Operation cancelled");
@@ -1801,10 +1688,8 @@ public class GUI extends javax.swing.JFrame {
 
     public void CargarMetadatos() throws ClassNotFoundException {
         try {
-            // System.out.println("????????????????");
             RAfile = new RandomAccessFile(file, "rw");
             int tamaño = RAfile.readInt();
-            //System.out.println(tamaño + " SIZEEEEEEEE");
             byte[] data = new byte[tamaño];
             RAfile.read(data);
             ByteArrayInputStream in = new ByteArrayInputStream(data);
@@ -1854,7 +1739,7 @@ public class GUI extends javax.swing.JFrame {
 
                 byte[] dat = obArray.toByteArray();
                 int required_size = dat.length;
-                DLL.Node espacio = AvailList.SearchSpace(required_size);
+                AVL.Node espacio = AvailList.SearchSpace(required_size);
                 if (espacio == null) {
                     System.out.println("NO ENCONTRO ESPACIO, NO CABE");
                     RAfile.seek(byteOffset);//Place pointe at the beggining of the file
@@ -1862,13 +1747,11 @@ public class GUI extends javax.swing.JFrame {
                     RAfile.write(dat);
                 } else {
                     System.out.println("SI ENCONTROO ESPACIO!!! ENTRO");
-                    //System.out.println("Esta es la POSICION: " + espacio.posicion);
                     datos.setUbicacion(espacio.posicion);
                     System.out.println("Espacio encontrado: " + espacio.data + " ----- Tamaño del Registro a Insertar: " + dat.length);
                     int j = 0;
                     for (int i = 0; i < (espacio.data - dat.length); i++) {//El for lo que hace es meter caracteres para igualar los size de ambos
                         datos.setSize_alter(datos.getSize_alter() + "|");
-                        //System.out.print("ENTRO Cuantas Veces??");
                         j++;
                     }
 
@@ -1909,8 +1792,7 @@ public class GUI extends javax.swing.JFrame {
             }
 
         } catch (IOException | NumberFormatException ex) {
-            // System.out.println("Tiene errrrrrrrroooooooooooooooor");
-            //ex.printStackTrace();
+           
         }
 
     }
@@ -1942,28 +1824,25 @@ public class GUI extends javax.swing.JFrame {
                     AvailList.BestFit(tamaño, d.ubicacion);
 
                 } else {//entra al else cuando NO ETSA ELIMINADO
-                    KennethExport2 = new ArrayList<>();
+                    ArrayExport = new ArrayList<>();
                     Registro temporal = new Registro(d.getKey());
                     temporal.setByteOffset(d.getUbicacion());
                     metadata.getArbolB().insert(temporal);
                     System.out.println("SE VA A METER A: " + d.getDatos().get(1) + " Ubicacion: " + d.getUbicacion());
                     for (int i = 0; i < d.getDatos().size(); i++) {
-                        KennethExport2.add(d.getDatos().get(i));
+                        ArrayExport.add(d.getDatos().get(i));
 
                     }
                     TableInsertRegistro();//Inserto en la tabla
 
-//Agrego un registro con el mismo formato que me fue enviado para implementarlo en la table
-                    //Arraylist Lista para agarrar Registros
-                    //GRAB Global Array!!!! XD 
+
                 }
 
             }
             metadata.ArbolB.traverse();
             metadata.ArbolB.PrintLevels();
         } catch (IOException ex) {
-            //ex.printStackTrace();
-            //System.out.println("ERrrrrrrrrrrrrrrrrrrrrrrrrrrrrrroooooooooooooooooorr");
+            
         }
     }
 
@@ -2017,13 +1896,9 @@ public class GUI extends javax.swing.JFrame {
                 System.out.println(temp.size_alter + " ----------------------------" + temp.ubicacion);
                 RAfile.write(dat2);
 
-                System.out.println("LLamar metodo del AvailList...");
                 AvailList.BestFit(size_act, temp.ubicacion);
                 AvailList.ImprimeListaEnlazada(AvailList.head);
-                System.out.println("Antes de Borrar el Registro...." + metadata.ArbolB.search(temporal));
                 metadata.ArbolB.remove(temporal);
-                System.out.println("Despues de Borrar el Registro...." + metadata.ArbolB.search(temporal));
-                System.out.println("===========================================================");
                 //Avai
 
             }
@@ -2036,8 +1911,6 @@ public class GUI extends javax.swing.JFrame {
         try {
             Registro temporal = new Registro(Integer.parseInt(TrimaExport.get(0).toString()));
             if (BuscarDatoArchivo(temporal) != null) {
-                System.out.println("===========================================================");
-                System.out.println("MODIFICANDO NODO...");
                 Data temp = BuscarDatoArchivo(temporal);
                 temporal.setByteOffset(temp.ubicacion);
                 RAfile.seek(temp.ubicacion);
@@ -2052,9 +1925,7 @@ public class GUI extends javax.swing.JFrame {
                 objeto.writeObject(new_size);
                 byte[] dat = obArray.toByteArray();
 
-                System.out.println("NEW SIZE" + dat.length + " ---- " + "SIZE ORIGINAL:" + size_act);
                 if (dat.length <= size_act) {//Este if permite entrar si es mas peqeño
-                    System.out.println("EL NUEVO REGISTRO ES MAS PEQUEÑO O IGUAL, SE ADAPATARA PARA QUE SEAN DEL MISMO TAMAÑO SI ES NECESARIO");
                     for (int i = 0; i < (size_act - dat.length); i++) {//El for lo que hace es meter caracteres para igualar los size de ambos
                         new_size.setSize_alter(new_size.getSize_alter() + "|");
                     }//Igualo los size para solo pegar el nuevo dato sobre el viejo y asi no generar errores
@@ -2063,9 +1934,9 @@ public class GUI extends javax.swing.JFrame {
                     objeto.writeObject(new_size);
                     dat = obArray.toByteArray();//Actulizando 
                     RAfile.write(dat);
-                    System.out.println("NEW SIZE" + dat.length + " ---- " + "SIZE ORIGINAL:" + size_act);
+                    
                 } else {
-                    System.out.println("EL NUEVO REGISTRO ES MUY GRANDE IRA AL FINAL DEL ARCHIVO");
+                    
                     temp.setSize_alter("*"); //Pone un aterisco que marca ese registro o dato como eliminado
                     obArray = new ByteArrayOutputStream();
                     objeto = new ObjectOutputStream(obArray);
@@ -2090,19 +1961,11 @@ public class GUI extends javax.swing.JFrame {
                     int ubicacion = searchEnNodo(tmp, temp.getKey());
                     tmp.key[ubicacion].byteOffset = byteOffset;
 
-                    System.out.println("LLamar metodo del AvailList...");
                     AvailList.BestFit(size_act, temporal.byteOffset);
                     AvailList.ImprimeListaEnlazada(AvailList.head);
-                    System.out.println("Antes de Borrar el Registro...." + metadata.ArbolB.search(temporal));
-                    System.out.println("Despues de Borrar el Registro...." + metadata.ArbolB.search(temporal));
-                    System.out.println("");
-
-                    System.out.println("Key: " + tmp.key[ubicacion].key + " ------------------ ByteOfsset" + tmp.key[ubicacion].byteOffset);
 
                     //Espera implementarse mas adelante
                 }
-                System.out.println("OPERACION REALIZADA EXITOSAMENTE");
-                System.out.println("===========================================================");
             }
         } catch (Exception ex) {
             //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -2111,7 +1974,6 @@ public class GUI extends javax.swing.JFrame {
 
     public int searchEnNodo(Bnode d, int key) {//Como mi arbol devulve el nodo en que se ubica el Registro
         int pos = 0;
-        //Este Metodo me dije la posicion en la que se encuentra en el Nodo.
         if (d != null) {
             for (int i = 0; i < d.n; i++) {//for que busca en el nodo la llave y le agrega el byte donde se ubica en el archivo
                 if (d.key[i].getKey() == key) {
@@ -2121,7 +1983,7 @@ public class GUI extends javax.swing.JFrame {
                 }
             }
         } else {
-            // System.out.println("PORQUE ESSS NULLLLLL?????????????????????????????");
+            
         }
         return pos;
     }
@@ -2161,13 +2023,13 @@ public class GUI extends javax.swing.JFrame {
             }
         });
     }
-    DLL AvailList = new DLL();
+    AVL AvailList = new AVL();
     int num = 0; //
     Funciones metodos = new Funciones(); //Import Program Abilities developed by Kenneth
     Metadata metadata; //Global Variable for metadata handling. May be null sometimes.
     TableModel cleanTable; //Clean Table model for when program needs to return to original state.
     File file; // Global variable for binary file handling. May be null sometimes.
-    ArrayList<Object> KennethExport2;
+    ArrayList<Object> ArrayExport;
     int tablemodification = 0; //Int bandera , Table awareness for modification.
     Object oldcellvalue; // Old cell value that is being modified live on table. Might be null.
     int currentRow;

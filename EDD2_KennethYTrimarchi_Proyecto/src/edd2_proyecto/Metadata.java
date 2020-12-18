@@ -12,10 +12,6 @@ import java.io.Serializable;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-/**
- *
- * @author Kenneth Van Yableth
- */
 public class Metadata implements Serializable {
 
     
@@ -23,7 +19,6 @@ public class Metadata implements Serializable {
     private ArrayList campos;
     private ArrayList tipos;
     private int numregistros = 0;
-    //private boolean estado; // True significa que hay informacion en la metadata.
     private long Campos_en_Archivo;
     BTree ArbolB;
     private int sizeMeta;
@@ -119,3 +114,4 @@ public class Metadata implements Serializable {
 
 
 }
+

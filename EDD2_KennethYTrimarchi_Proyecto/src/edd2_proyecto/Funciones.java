@@ -17,7 +17,6 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
-//import javafx.scene.control.Cell;
 import javax.swing.JOptionPane;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -53,17 +52,6 @@ public class Funciones {
 
     }
 
-    /*RandomAccessFile raf = new RandomAccessFile(new File("Raf.txt"), "rw");
-       raf.writeBytes("PENE0");
-       raf.seek(0);
-        //System.out.println(raf.getFilePointer());
-        for (int i = 0; i < raf.length(); i++) {
-            
-            System.out.println( (char)raf.readByte() );
-        }
-        raf.close();*/
-    //Metadata meta = new Metadata("Kenneth");
-    //Write(meta);
     public static void Delete(int position) throws IOException {
 
         File file = null;
@@ -177,9 +165,6 @@ public class Funciones {
 
     }
 
-    ////////////////////////////////////////////////
-    ////////////////////////////////////////////////
-    ////////////////////////////////////////////////
     public void CreateCampos(Metadata metadata, ArrayList campos, ArrayList types) throws IOException, ParseException {
         if (metadata.getNumregistros() == 0) {
             
@@ -188,30 +173,22 @@ public class Funciones {
             metadata.setTipos(types);
             metadata.setNombre(campos.toString());
 
-            //metadata.setCamposArchivo(contador);//Para no afectar la estrutura hice un metodo para llenar mi Arraylist de Campos
-            // System.out.println("Successfull!, check table");
             JOptionPane.showMessageDialog(null, "Success! Check Table.");
         } else {
-            //  System.out.println("Ya no se puede ingresar campos. Se ingresaron registros.");
             JOptionPane.showMessageDialog(null, "Registro Ingresado, imposible realizar accion.");
         }
 
     } //End CreateCampos.
 
     public void ListCampos(Metadata metadata) {
-        //System.out.println(metadata.getCampos().toString());
         JOptionPane.showMessageDialog(null, metadata.getCampos().toString() + "\n" + metadata.getTipos().toString());
     } //Fin de listar campos.
 
     public void ModificarCampos(Metadata metadata) {
-        //System.out.println("Ingrese el numero de cammpo que va a modificar: Ingresar apartir de 1.");
-        //JOptionPane.showMessageDialog(null, "Ingrese el campo a modificar a partir de 1.");
         if (metadata.getNumregistros() == 0) {
             try {
 
                 int campo = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el campo a modificar a partir de 1")); //Leo el campo a borrar
-                //System.out.println("Ingrese el nuevo valor del campo:");
-                //read.nextLine(); //Leo el nuevo nombre del campo
                 String input = JOptionPane.showInputDialog(null, "Ingrese el nuevo nombre: ");
                 int type = -1;
                 if (campo == 1) {
@@ -226,21 +203,17 @@ public class Funciones {
                 if (campo >= 0 && campo < campos.size() && campo == 0) {
 
                     campos.set(campo, input);
-                    // tipos.set(campo, type);
                     metadata.setCampos(campos);
-                    //System.out.println("Successfull! Check Table");
                     JOptionPane.showMessageDialog(null, "Success! Check Table");
                 } else if (campo >= 0 && campo < campos.size()) {
                     campos.set(campo, input);
                     tipos.set(campo, type);
                 } else {
-                    //System.out.println("Invalid Size. Action could not be performed.");
                     JOptionPane.showMessageDialog(null, "Invalid Size");
                 }
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Incorret Value Inserted.");
-                //e.printStackTrace();
                 System.out.println("Crash Prevented Funcion Modificar Campo.");
             }
         }
@@ -249,13 +222,12 @@ public class Funciones {
 
     public void DeleteCampos(Metadata metadata) {
         if (metadata.getNumregistros() == 0) {
-            //System.out.println("Ingrese el numero del campo a borrar. Contar desde 1.");
-            System.out.println("X2");
+            
             int campo = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el numero del campo a borrar A PARTIR DE 1"));
             System.out.println("As requested.");
             System.out.println("Modification requested Campo #:" + campo);
             campo--;
-            System.out.println("PENE");
+            
             ArrayList campos = metadata.getCampos();
             ArrayList tipos = metadata.getTipos();
             if (campo >= 0 && campo < campos.size()) {
@@ -263,7 +235,6 @@ public class Funciones {
                 tipos.remove(campo);
                 metadata.setCampos(campos);
                 metadata.setTipos(tipos);
-                //System.out.println("Successfull! Check table!");
                 JOptionPane.showMessageDialog(null, "Success Check table");
             } else {
                 JOptionPane.showMessageDialog(null, "Action could not be performed!");
@@ -330,3 +301,4 @@ public class Funciones {
 
    
 }
+
