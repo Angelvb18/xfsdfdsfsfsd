@@ -145,6 +145,7 @@ public class GUI extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -607,14 +608,23 @@ public class GUI extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Table);
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edd2_proyecto/system-update.png"))); // NOI18N
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 805, Short.MAX_VALUE)
                 .addGap(37, 37, 37))
         );
         jPanel1Layout.setVerticalGroup(
@@ -622,7 +632,11 @@ public class GUI extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
                 .addContainerGap())
         );
 
@@ -1364,9 +1378,9 @@ public class GUI extends javax.swing.JFrame {
                                     Object assignation = null; //Basicamente solo es para que ocurra la exception validadora pero no hace nada.
                                     if (type == 1) {
                                         assignation = Integer.parseInt(temp.toString());
-                                    } else if (type == 2) {
-                                        assignation = Long.parseLong(temp.toString());
                                     } else if (type == 3) {
+                                        assignation = Long.parseLong(temp.toString());
+                                    } else if (type == 2) {
                                         assignation = temp.toString();
                                     } else if (type == 4) {
                                         assignation = temp.toString().charAt(0);
@@ -1600,6 +1614,25 @@ public class GUI extends javax.swing.JFrame {
     private void jb_AceptarRegistroStringMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_AceptarRegistroStringMouseClicked
         jd_CrearRegistroInt.dispose();
     }//GEN-LAST:event_jb_AceptarRegistroStringMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        if (FileSuccess == 1 && metadata.getNumregistros() > 0) {
+            metadata = new Metadata();
+            BuildTable(metadata, 1);
+            try {
+                CargarMetadatos();
+                BuildTable(metadata, 0);
+                LeerDatosRegistro();
+            } catch (ClassNotFoundException ex) {
+                // Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            System.out.println(metadata.getCampos().get(0));
+
+        } else {
+
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
     public static void exportXML(ArrayList Campos, ArrayList Regs, String Direccion) {
         Document document = null;
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -2156,6 +2189,7 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Table;
     private javax.swing.ButtonGroup bt_Tipo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
