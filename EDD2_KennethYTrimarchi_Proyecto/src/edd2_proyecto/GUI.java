@@ -129,16 +129,20 @@ public class GUI extends javax.swing.JFrame {
         jb_AceptarRegistroString = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         Table = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -484,172 +488,96 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(153, 0, 102));
+        jPanel2.setBackground(new java.awt.Color(153, 255, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jPanel3.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel3MouseClicked(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Export to Excel");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Special Features");
 
         jLabel3.setBackground(new java.awt.Color(0, 255, 0));
         jLabel3.setFont(new java.awt.Font("Tw Cen MT", 3, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Standard  File  Manager");
 
-        jPanel4.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel4MouseClicked(evt);
-            }
-        });
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT", 3, 48)); // NOI18N
+        jLabel1.setText("AAJS");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Export to XML");
+        jLabel2.setText("®");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jLabel4.setFont(new java.awt.Font("Tw Cen MT", 3, 18)); // NOI18N
+        jLabel4.setText("11811144");
 
-        jPanel5.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel5MouseClicked(evt);
-            }
-        });
+        jLabel5.setFont(new java.awt.Font("Tw Cen MT", 3, 18)); // NOI18N
+        jLabel5.setText("11911224");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Test Registries");
+        jLabel6.setFont(new java.awt.Font("Tw Cen MT", 3, 18)); // NOI18N
+        jLabel6.setText("11911119");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jLabel13.setFont(new java.awt.Font("Tw Cen MT", 3, 18)); // NOI18N
+        jLabel13.setText("11911328");
 
-        jPanel6.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel6MouseClicked(evt);
-            }
-        });
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Cruzar Archivo");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(32, 32, 32))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jLabel14.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel14.setText("EDD2");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel14)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2))
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jSeparator6))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(124, 124, 124)
+                .addComponent(jLabel14)
+                .addGap(2, 2, 2)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(jLabel5)
+                .addGap(1, 1, 1)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(65, 65, 65))))
         );
 
         jScrollPane1.setOpaque(false);
@@ -686,7 +614,7 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 823, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 825, Short.MAX_VALUE)
                 .addGap(37, 37, 37))
         );
         jPanel1Layout.setVerticalGroup(
@@ -694,7 +622,7 @@ public class GUI extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
         );
 
@@ -1076,7 +1004,7 @@ public class GUI extends javax.swing.JFrame {
                 jd_CrearRegistroInt.setVisible(true);
                 int integer = (int) jf_Integer.getValue();
                 insertarray[i] = integer;
-            }else if(Integer.parseInt(metadata.getTipos().get(i).toString()) == 2){
+            }else if(Integer.parseInt(metadata.getTipos().get(i).toString()) == 3){
                 jl_NombreCampoInt.setText(metadata.getCampos().get(i).toString());
                 jf_Integer.setValue(0);
                 jd_CrearRegistroInt.pack();
@@ -1085,7 +1013,7 @@ public class GUI extends javax.swing.JFrame {
                 jd_CrearRegistroInt.setVisible(true);
                 long N_long = (long) jf_Integer.getValue();
                 insertarray[i] = N_long;
-            }else if(Integer.parseInt(metadata.getTipos().get(i).toString()) == 3){
+            }else if(Integer.parseInt(metadata.getTipos().get(i).toString()) == 2){
                 
                 jl_nombreCampo.setText(metadata.getCampos().get(i).toString());
                 jd_CrearRegistroString.pack();
@@ -1523,228 +1451,6 @@ public class GUI extends javax.swing.JFrame {
         System.out.println("Row:"+Row);
         System.out.println("Column:"+Column);*/
     }//GEN-LAST:event_TableFocusLost
-
-    private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
-        /*
-        // TODO add your handling code here:
-        if (file == null || metadata == null) {
-            JOptionPane.showMessageDialog(null, "No hay ningun file cargado");
-        } else {
-            if (metadata.getCampos() == null) {
-                JOptionPane.showMessageDialog(null, "No hay informacion definida.");
-            } else {
-                JTable tablavieja = (JTable) Table;
-                Metadata vieja = (Metadata) metadata;
-
-                AvailList = new DLL();
-                RAfile = null;
-                //Metadata temporal = new Metadata();
-                //temporal = metadata;
-                LoadFile();
-                if (FileSuccess == 1) {
-
-                    metadata = new Metadata();
-                    BuildTable(metadata, 1);
-                    try {
-                        CargarMetadatos();
-                        BuildTable(metadata, 0);
-                        LeerDatosRegistro();
-                    } catch (ClassNotFoundException ex) {
-                        Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-
-                    // Comparar ahora los campos de ambas metadatas.
-                    if (metadata.getCampos().size() == vieja.getCampos().size()) {
-                        boolean compatible = true;
-                        int camposmax = metadata.getCampos().size();
-                        for (int i = 0; i < camposmax; i++) {
-                            int value1 = Integer.parseInt(metadata.getTipos().get(i).toString());
-                            int value2 = Integer.parseInt(vieja.getTipos().get(i).toString());
-                            if (value1 == value2) {
-
-                            } else {
-                                System.out.println("Valor Incompatible i:" + value1 + "Valor Incompatible2:" + value2);
-                                compatible = false;
-                            }
-
-                        }
-                        if (compatible) {
-                            System.out.println(metadata);
-                            System.out.println(vieja);
-                            TableModel modelviejo = tablavieja.getModel();
-                            DefaultTableModel modeloviejo = (DefaultTableModel) modelviejo;
-                            TableModel model = Table.getModel();
-                            DefaultTableModel modelo = (DefaultTableModel) model;
-                            for (int i = 0; i < tablavieja.getRowCount(); i++) {
-                                int numactualr = Integer.parseInt(modeloviejo.getValueAt(i, 0).toString());
-                                int superes = Integer.parseInt(Table.getValueAt(i, 0).toString());
-                                System.out.println("nUM ACTUAk" + numactualr + "Ps" + superes);
-                                Registro trabajando = new Registro(numactualr);
-                                if (metadata.getArbolB().search(trabajando) == null) {
-                                    if (numactualr > 9999 && numactualr < 100000) {
-                                        metadata.getArbolB().insert(trabajando);
-                                        ArrayList superrow = new ArrayList();
-                                        for (int j = 0; j < vieja.getCampos().size(); j++) {
-                                            superrow.add(tablavieja.getValueAt(i, j));
-                                        }
-
-                                        modelo.addRow(superrow.toArray());
-                                        System.out.println(trabajando);
-                                        metadata.addnumregistros();
-                                        try {
-                                            EscribirDatosRegistro(superrow);//Send Array to Trima
-                                            BuscarDatoArchivo(trabajando);
-                                        } catch (Exception ex) {
-                                            //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-                                            System.out.println(ex);
-                                            ex.printStackTrace();
-                                        }
-                                        Table.setModel(modelo);
-                                        System.out.println(metadata.getArbolB().search(trabajando));
-                                    } else {
-                                        JOptionPane.showMessageDialog(null, "Dato Incompatible pertenece a primary key " + numactualr);
-
-                                    }
-                                } else {
-                                    JOptionPane.showMessageDialog(null, "Dato Ya existe!");
-                                    // System.out.println(metadata.getArbolB().search(trabajando));
-                                }
-                            }
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Metadatas no compatibles por tipo");
-
-                        }
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Metadatas no compatibles por tamaño de campos");
-                        JOptionPane.showMessageDialog(null, "Se cargara el segundo archivo seleccionado.");
-                    }
-                }
-            }
-        }
-        */
-    }//GEN-LAST:event_jPanel6MouseClicked
-
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel6MouseClicked
-
-    private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
-        // TODO add your handling code here:
-        if (developermode == 1) {
-            if (metadata != null) {
-                if (metadata.getCampos() != null) {
-                    if (metadata.getCampos().size() > 0) {
-                        if (file == null) {
-                            JOptionPane.showMessageDialog(null, "ERROR 404: Please make sure file and campos have been defined. Or a saving destination has been established");
-                        } else {
-                            System.out.println("TestRegistries SuperCampos:" + metadata.getNumregistros());
-                            if (metadata.getNumregistros() < 1) {
-                                try {
-                                    file.delete();
-                                    file.createNewFile();
-                                    System.out.println("Forcing deletion and recreation of the file.");
-                                } catch (Exception sdj) {
-                                    //System.out.println("Error en la puteria de borrar.");
-                                }
-                                //metadata.addnumregistros();
-                                try {
-                                    EscribirMetadatos();
-                                } catch (IOException ex) {
-                                    //ex.printStackTrace();
-                                }
-                                //CrearRegistro();
-                                try {
-                                    for (int i = 10000; i < 10021; i++) {
-                                        ArrayList registro = new ArrayList();
-                                        registro.add(i);
-
-                                        for (int j = 1; j < metadata.getCampos().size(); j++) {
-                                            if (metadata.getTipos().get(j).toString().equals(Integer.toString(1))) {
-                                                registro.add(j);
-                                            } else if (metadata.getTipos().get(j).toString().equals(Integer.toString(2))) {
-                                                long x = j;
-                                                registro.add(x);
-                                            } else if (metadata.getTipos().get(j).toString().equals(Integer.toString(3))) {
-                                                registro.add("Andrea Mendoza");
-                                            } else {
-                                                registro.add("F");
-                                            }
-                                        }
-                                        Registro xasda = new Registro(i);
-                                        metadata.getArbolB().insert(xasda);
-                                        metadata.addnumregistros();
-                                        TableModel x = Table.getModel();
-                                        DefaultTableModel model = (DefaultTableModel) x;
-                                        model.addRow(registro.toArray());
-                                        try {
-                                            EscribirDatosRegistro(registro);//Send Array to Trima
-                                            BuscarDatoArchivo(xasda);
-                                        } catch (Exception ex) {
-                                            //Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
-                                            // System.out.println(ex);
-                                        }
-                                        Table.setModel(x);
-                                    }
-                                } catch (Exception e) {
-                                    // e.printStackTrace();
-                                }
-
-                            } else {
-                                // metadata.addnumregistros();
-                                //CrearRegistro();
-                                JOptionPane.showMessageDialog(null, "Deben haber exactamente 0 registros en el gui.");
-                            }
-                        }
-                    }
-                }
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Super User features have been disabled by creator.");
-        }
-
-    }//GEN-LAST:event_jPanel5MouseClicked
-
-    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-        // TODO add your handling code here:
-        try {
-            if (file == null || metadata == null || metadata.getCampos() == null || metadata.getNumregistros() == 0) {
-                JOptionPane.showMessageDialog(null, "No hay informacion cargada");
-            } else {
-                String name = JOptionPane.showInputDialog(null, "Ingrese el nombre del exporte: ");
-                ArrayList registrost = new ArrayList();
-
-                for (int i = 0; i < Table.getRowCount(); i++) {
-                    ArrayList row = new ArrayList();
-                    for (int j = 0; j < Table.getColumnCount(); j++) {
-                        row.add(Table.getValueAt(i, j));
-                    }
-                    registrost.add(row);
-                }
-                exportXML(metadata.getCampos(), registrost, name);
-            }
-
-        } catch (Exception e) {
-            System.out.println("Could not export successfully");
-        }
-
-    }//GEN-LAST:event_jPanel4MouseClicked
-
-    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
-        // TODO add your handling code here:
-        try {
-            if (file == null || metadata == null || metadata.getCampos() == null || metadata.getNumregistros() == 0) {
-                JOptionPane.showMessageDialog(null, "No hay informacion cargada");
-            } else {
-                String name = JOptionPane.showInputDialog(null, "Ingrese el nombre del exporte: ");
-                metodos.ExportToExcel(metadata, name, Table);
-            }
-
-        } catch (Exception e) {
-            System.out.println("Error Fatal.");
-        }
-
-        //metodos.ExportToExcel();
-    }//GEN-LAST:event_jPanel3MouseClicked
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
         // TODO add your handling code here:
@@ -2455,6 +2161,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2487,12 +2195,14 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JButton jb_AceptarRegistroString;
     private javax.swing.JButton jb_RegresarDeCrearCampo;
     private javax.swing.JButton jb_RegresarRegistroString;
