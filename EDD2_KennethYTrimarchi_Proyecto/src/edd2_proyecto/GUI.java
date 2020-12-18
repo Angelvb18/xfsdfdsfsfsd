@@ -1058,7 +1058,6 @@ public class GUI extends javax.swing.JFrame {
         Registro temporal = new Registro(Integer.parseInt(insertarray[0].toString()));
 
         if (metadata.getArbolB().search(temporal) == null) {
-            if (Integer.parseInt(insertarray[0].toString()) > 9999 && Integer.parseInt(insertarray[0].toString()) < 100000) {
                 metadata.getArbolB().insert(temporal);
                 modelo.addRow(insertarray);
                 System.out.println(temporal);
@@ -1073,9 +1072,7 @@ public class GUI extends javax.swing.JFrame {
                 }
                 Table.setModel(modelo);
                 System.out.println(metadata.getArbolB().search(temporal));
-            } else {
-                JOptionPane.showMessageDialog(null, "Ingrese valores entre 9999 y 100,000");
-            }
+
 
         } else {
             JOptionPane.showMessageDialog(null, "Una Instancia del Registro ya existe.");
